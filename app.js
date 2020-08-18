@@ -1,9 +1,13 @@
 const express = require("express");
 const seql = require("./src/database/database");
+const { request } = require("express");
 
 const app = express();
 
+app.use(express.json())
+const authorRoute=require('./src/routers/authorRoute')
 
+app.use('/author',authorRoute)
 
 try {
   seql.authenticate();
