@@ -1,16 +1,17 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const seque = require("../database/database");
 
-module.exports = seque.define("author", {
+module.exports = seque.define("reviews", {
   id: {
     type: DataTypes.INTEGER(11),
+    unique: true,
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
   },
-  name: {
-    type: DataTypes.STRING(20),
+  review: {
+    type: DataTypes.STRING(100),
     allowNull: false,
-    unique: true,
   },
+  boookId: DataTypes.INTEGER(11),
 });

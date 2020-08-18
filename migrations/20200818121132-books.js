@@ -2,24 +2,25 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    queryInterface.createTable("author", {
+    queryInterface.createTable("book", {
       id: {
         type: Sequelize.DataTypes.INTEGER(11),
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
+        autoIncrement: true,
       },
-      name: {
+      bookname: {
         type: Sequelize.DataTypes.STRING(20),
         allowNull: false,
         unique: true,
       },
+      authorId:Sequelize.DataTypes.INTEGER(11),
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE,
     });
   },
 
   down: async (queryInterface, Sequelize) => {
-    queryInterface.dropTable("author");
+    queryInterface.dropTable("book");
   },
 };

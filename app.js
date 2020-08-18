@@ -3,6 +3,8 @@ const seql = require("./src/database/database");
 
 const app = express();
 
+
+
 try {
   seql.authenticate();
   console.log("Connection has been established successfully.");
