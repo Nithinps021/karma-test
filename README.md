@@ -1,12 +1,12 @@
 # karma-test
 
-**STEP 1**
-import karma.sql  in SQL folder to your database
+**STEP 1**\
+import karma.sql  in SQL folder to your database\
 
--open terminal
--mysql -u root -p karma < (location)\karma.sql
--type password
--Check your mysql database
+-open terminal\
+-mysql -u root -p karma < (location)\karma.sql\
+-type password\
+-Check your mysql database\
 
 
 STEP 2:
