@@ -1,8 +1,8 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const seque = require("../database/database");
-
-module.exports = seque.define(
-  "reviews",
+const Books = require('../model/Books')
+const Reviews = seque.define(
+  "review",
   {
     id: {
       type: DataTypes.INTEGER(11),
@@ -15,7 +15,12 @@ module.exports = seque.define(
       type: DataTypes.STRING(100),
       allowNull: false,
     },
-    boookId: DataTypes.INTEGER(11),
+    book_Id: {
+      type:DataTypes.INTEGER(11),
+      allowNull:false,
+    }
   },
   { freezeTableName: true }
 );
+
+module.exports=Reviews

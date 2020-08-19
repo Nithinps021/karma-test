@@ -15,6 +15,7 @@ module.exports = seque.define(
       allowNull: false,
       unique: true,
     },
+    
   },
   { freezeTableName: true }
 );

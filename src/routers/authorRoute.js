@@ -1,5 +1,6 @@
 const express = require("express");
 const Author = require("../model/Author");
+const Books = require("../model/Books");
 
 const authorRoute = express.Router();
 authorRoute.use(express.json());
@@ -16,8 +17,7 @@ authorRoute
         return res.status(200).json(user);
       })
       .catch((err) => {
-        let errMessage = err.errors[0];
-        return res.status(500).json({ error: errMessage.message });
+        return res.status(500).json(err);
       });
   })
   .get((req, res) => {
@@ -32,20 +32,7 @@ authorRoute
   .put((req, res) => {
     return res.status(403).json({ error: "PUT opertaion not allowed" });
   })
-  .delete((req, res) => {
-    Author.destroy({ truncate: true })
-      .then((users) => {
-        return res.status(200).json({
-          status: "success",
-          message: "All rows are deleted",
-          obj: users,
-        });
-      })
-      .catch((err) => {
-        let errMessage = err.errors[0];
-        return res.status(500).json({ error: errMessage.message });
-      });
-  });
+ 
 
 authorRoute
   .route("/:authorId")
@@ -79,7 +66,7 @@ authorRoute
       },
     })
       .then((author) => {
-        return res.status(200).json(author);
+        return res.status(200).json({status:"success",message:`Author with id ${authorId} was updated`});
       })
       .catch((err) => {
         let errMessage = err.errors[0];
@@ -106,5 +93,6 @@ authorRoute
       return res.status(404).json({ error: errMessage.message });
     })
   });
+
 
 module.exports = authorRoute;

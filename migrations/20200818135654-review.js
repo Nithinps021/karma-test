@@ -14,7 +14,10 @@ module.exports = {
         type: Sequelize.DataTypes.STRING(100),
         allowNull: false,
       },
-      boookId: Sequelize.DataTypes.INTEGER(11),
+      book_Id: {
+        type:Sequelize.DataTypes.INTEGER(11),
+        allowNull:false,
+      },
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE,
     });

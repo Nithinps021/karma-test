@@ -14,7 +14,14 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
-      authorId:Sequelize.DataTypes.INTEGER(11),
+      price:{
+        type:Sequelize.DataTypes.FLOAT,
+        allowNull:false
+      },
+      author_id:{
+        type:Sequelize.DataTypes.INTEGER(11),
+        allowNull: false,
+      },
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE,
     });
