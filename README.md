@@ -1,6 +1,6 @@
 # karma-test
 
-STEP 1:
+**STEP 1**
 import karma.sql  in SQL folder to your database
 
 -open terminal
