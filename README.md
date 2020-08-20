@@ -39,7 +39,7 @@ POST:http://localhost:8080/review to add a review
 
 GET:http://localhost:8080/review/:reviewId  to get details of a perticular review\
 PUT:http://localhost:8080/review/:reviewId to update the details of perticular review\
-DELETE:http://localhost:8080/books/:reviewId to delete a pertiular review
+DELETE:http://localhost:8080/review/:reviewId to delete a pertiular review
 
 GET:http://localhost:8080/review?book_Id=x  to get all reviews book x\
 GET:http://localhost:8080/book?author_Id=x  to get books of author x
