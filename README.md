@@ -41,8 +41,8 @@ GET:http://localhost:8080/review/:reviewId  to get details of a perticular revie
 PUT:http://localhost:8080/review/:reviewId to update the details of perticular review\
 DELETE:http://localhost:8080/books/:reviewId to delete a pertiular review
 
-GET:http://localhost:8080/review/book/:bookId  to get all reviews of a perticular book\
-GET:http://localhost:8080/book/author/:authorId  to get books of a perticular author
+GET:http://localhost:8080/review?book_Id=x  to get all reviews book x\
+GET:http://localhost:8080/book?author_Id=x  to get books of author x
 
 
 
