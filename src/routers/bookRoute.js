@@ -20,7 +20,9 @@ bookRoute
       });
   })
   .get((req, res) => {
-    Books.findAll()
+    Books.findAll({
+      where:req.query
+    })
       .then((books) => {
         if(books.length===0) {
           return res.status(200).json({message:"No books available"})
@@ -98,23 +100,5 @@ bookRoute
         return res.status(404).json(err.parent.sqlMessage);
       });
   });
-  bookRoute.route('/author/:authorId')
-  .get((req,res)=>{
-    let{authorId} =req.params
-    Books.findAll({
-      where:{
-        author_Id:authorId
-      }
-    })
-    .then(books=>{
-      if(books.length===0){
-        return res.status(200).json({message:"No books found"})
-      }
-      return res.status(200).json(books)
-    })
-    .catch((err)=>{
-      return res.status(400).json(err)
-    })
-  })
-  
+
 module.exports = bookRoute;

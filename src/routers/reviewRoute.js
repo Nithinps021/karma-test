@@ -20,7 +20,9 @@ reviewRoute
       });
   })
   .get((req, res) => {
-    Reviews.findAll()
+    Reviews.findAll({
+      where:req.query
+    })
       .then((reviews) => {
         if (reviews.length===0){
           return res.status(200).json({message:"No reviews found"})
@@ -109,23 +111,4 @@ reviewRoute
       });
   });
 
-  reviewRoute.route('/book/:bookId')
-  .get((req,res)=>{
-    let{bookId} =req.params
-    Reviews.findAll({
-      where:{
-        book_Id:bookId
-      }
-    })
-    .then(reviews=>{
-      if(reviews.length===0){
-        return res.status(200).json({message:"No reviews found"})
-      }
-      return res.status(200).json(reviews)
-    })
-    .catch((err)=>{
-      return res.status(400).json(err)
-    })
-  })
-  
 module.exports = reviewRoute;
